@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import Image from 'next/image'
 import { Star, Quote } from 'lucide-react'
 
 const TESTIMONIALS = [
@@ -62,13 +61,12 @@ function Card({ t }: { t: typeof TESTIMONIALS[0] }) {
         &ldquo;{t.text}&rdquo;
       </p>
       <div className="flex items-center gap-3 pt-4 border-t border-white/[0.08]">
-        <div className="w-9 h-9 rounded-full overflow-hidden bg-parch-400/20 shrink-0">
-          <Image src={t.avatar} alt={t.name} width={36} height={36} className="object-cover" />
+        <div className="w-9 h-9 rounded-full bg-gold-300/20 border border-gold-300/30 shrink-0 flex items-center justify-center">
+          <span className="font-cormorant text-gold-300 font-semibold text-base leading-none">
+            {t.name.charAt(0)}
+          </span>
         </div>
-        <div>
-          <p className="font-dm font-semibold text-parch-100 text-sm leading-none mb-0.5">{t.name}</p>
-          <p className="font-dm text-stone-500 text-xs">{t.role}</p>
-        </div>
+        <p className="font-dm font-semibold text-parch-100 text-sm leading-none">{t.name}</p>
       </div>
     </div>
   )
@@ -113,9 +111,6 @@ export default function Testimonials() {
           <h2 className="font-cormorant font-light text-parch-100 leading-[1.04] text-[2rem] sm:text-[2.6rem] lg:text-[3.6rem] mb-4">
             Famílias que <span className="italic text-gold-300">confiam</span> em nós
           </h2>
-          <p className="font-dm text-stone-500 text-sm sm:text-[15px] max-w-sm sm:max-w-lg mx-auto">
-            Mais de 200 famílias já encontraram o seu companheiro perfeito aqui.
-          </p>
         </div>
 
         {/* Mobile: horizontal scroll */}

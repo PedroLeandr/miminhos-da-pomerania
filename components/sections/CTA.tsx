@@ -49,7 +49,7 @@ export default function CTA() {
             {Array.from({ length: 5 }).map((_, i) => (
               <Star key={i} size={13} className="fill-gold-300 text-gold-300" />
             ))}
-            <span className="ml-2 font-dm text-xs sm:text-sm text-stone-400">5.0 · 200+ avaliações</span>
+            <span className="ml-2 font-dm text-xs sm:text-sm text-stone-400">5.0 · Excelente</span>
           </div>
 
           <span className="font-dm text-gold-300 text-[10px] font-semibold tracking-[0.22em] uppercase mb-5 block">

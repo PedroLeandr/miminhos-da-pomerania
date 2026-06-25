@@ -6,7 +6,6 @@ import { Award, Heart, Users, HeartHandshake } from 'lucide-react'
 
 const STATS = [
   { value: '14+', label: 'Anos de experiência' },
-  { value: '200+', label: 'Famílias atendidas' },
   { value: '100%', label: 'Satisfação garantida' },
 ]
 
@@ -83,7 +82,7 @@ export default function About() {
               mas também o cuidado e o amor que dedicamos a cada detalhe da sua criação.
             </p>
 
-            <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-parch-200">
+            <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-parch-200">
               {STATS.map(s => (
                 <div key={s.label}>
                   <p className="font-cormorant text-[2rem] sm:text-[2.5rem] font-semibold text-gold-300 leading-none mb-1">{s.value}</p>

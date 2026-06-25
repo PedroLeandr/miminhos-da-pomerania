@@ -1,7 +1,6 @@
 const ITEMS = [
   'Pedigree CBKC',
   'Saúde Garantida',
-  '+200 Famílias',
   'Desde 2010',
   'Suporte Vitalício',
   'Linhagem Campeã',

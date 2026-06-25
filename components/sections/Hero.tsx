@@ -5,7 +5,6 @@ import { Star } from 'lucide-react'
 
 const STATS = [
   { value: '14+', label: 'Anos' },
-  { value: '200+', label: 'Famílias' },
   { value: '100%', label: 'Satisfação' },
 ]
 

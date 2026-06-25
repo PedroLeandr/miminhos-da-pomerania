@@ -24,11 +24,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-parch-100/96 backdrop-blur-lg border-b border-parch-300/50 shadow-[0_1px_24px_rgba(10,8,6,0.06)]'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 inset-x-0 z-50 bg-white border-b border-parch-300/50 shadow-[0_1px_24px_rgba(10,8,6,0.06)]"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-[72px]">
 
