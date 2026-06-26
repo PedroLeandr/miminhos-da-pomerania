@@ -8,7 +8,7 @@ const TESTIMONIALS = [
     name: 'Ana Carolina Mendes',
     role: 'Tutora da Lola — Creme',
     avatar: 'https://i.pravatar.cc/80?img=11',
-    text: 'A minha Lola chegou com toda a documentação, vacinas em dia e um enxoval lindo. O atendimento foi impecável, antes e depois da adoção. Recomendo sem hesitar!',
+    text: 'A minha Lola chegou com toda a documentação e vacinas em dia. O atendimento foi impecável, antes e depois da adoção. Recomendo sem hesitar!',
     rating: 5,
   },
   {
