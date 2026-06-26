@@ -10,7 +10,7 @@ const BENEFITS = [
   { n: '04', icon: GraduationCap,title: 'Orientação Completa', desc: 'Manual de cuidados e acesso ao grupo exclusivo de tutores Miminhos da Pomerânia.' },
   { n: '05', icon: Sparkles,     title: 'Padrão Premium',      desc: 'Seleção rigorosa dos reprodutores para o mais alto padrão estético e temperamental.' },
   { n: '06', icon: Clock,        title: 'Garantia Contratual', desc: 'Contrato formal com garantia de saúde e termo de responsabilidade do canil.' },
-  { n: '07', icon: MapPin,       title: 'Entrega com Segurança',desc: 'Entregamos com toda a documentação, enxoval inicial e cuidados para a viagem.' },
+  { n: '07', icon: MapPin,       title: 'Entrega com Segurança',desc: 'Entregamos com toda a documentação e cuidados para a viagem.' },
   { n: '08', icon: PhoneCall,    title: 'Suporte Pós-adoção',  desc: 'Tire todas as suas dúvidas connosco. Estamos disponíveis sempre que precisar.' },
 ]
 
