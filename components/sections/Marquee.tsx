@@ -1,5 +1,5 @@
 const ITEMS = [
-  'Pedigree CBKC',
+  'Pedigree LOP',
   'Saúde Garantida',
   'Desde 2010',
   'Suporte Vitalício',

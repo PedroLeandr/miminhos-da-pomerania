@@ -35,7 +35,7 @@ export default function Footer() {
             </a>
 
             <p className="font-dm text-stone-400 text-sm leading-relaxed max-w-xs mb-7">
-              Há mais de 14 anos a criar Spitz Alemão com pedigree CBKC, saúde garantida
+              Há mais de 14 anos a criar Spitz Alemão com pedigree LOP, saúde garantida
               e suporte vitalício. Amor em cada detalhe.
             </p>
 
@@ -97,7 +97,7 @@ export default function Footer() {
               <li>
                 <div className="flex items-start gap-3 font-dm text-sm text-stone-400">
                   <MapPin size={13} className="shrink-0 mt-0.5" />
-                  <span>Rua Timor Loro SAE 75<br />3880-644 Válega</span>
+                  <span>Rua Timor Loro SAE 75<br />3880-644 Válega, Ovar</span>
                 </div>
               </li>
             </ul>

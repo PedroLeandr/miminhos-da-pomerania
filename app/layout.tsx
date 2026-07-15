@@ -19,8 +19,8 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'Miminhos da Pomerânia',
   description:
-    'Criação especializada de Spitz Alemão com pedigree CBKC, saúde garantida e suporte vitalício. Filhotes criados com amor há mais de 14 anos.',
-  keywords: ['Lulu da Pomerânia', 'Spitz Alemão', 'filhotes', 'canil premium', 'pedigree CBKC'],
+    'Criação especializada de Spitz Alemão com pedigree LOP, saúde garantida e suporte vitalício. Filhotes criados com amor há mais de 14 anos.',
+  keywords: ['Lulu da Pomerânia', 'Spitz Alemão', 'filhotes', 'canil premium', 'pedigree LOP'],
   openGraph: {
     title: 'Miminhos da Pomerânia',
     description: 'Filhotes de Spitz Alemão criados com excelência, pedigree e amor.',

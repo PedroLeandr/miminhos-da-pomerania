@@ -10,8 +10,8 @@ const STATS = [
 ]
 
 const PILLARS = [
-  { icon: Award,         title: 'Pedigree Certificado', desc: 'Registo CBKC/FCI com genealogia comprovada até quatro gerações.' },
-  { icon: Heart,         title: 'Saúde Garantida',      desc: 'Protocolo vacinal completo, vermifugação e exames preventivos.' },
+  { icon: Award,         title: 'Pedigree Certificado', desc: 'Registo LOP/FCI com genealogia comprovada até quatro gerações.' },
+  { icon: Heart,         title: 'Saúde Garantida',      desc: 'Protocolo vacinal completo, desparasitação e exames preventivos.' },
   { icon: Users,         title: 'Socialização Perfeita',desc: 'Filhotes criados em ambiente familiar desde os primeiros dias.' },
   { icon: HeartHandshake,title: 'Suporte Vitalício',    desc: 'Estamos ao seu lado em cada etapa da vida do seu companheiro.' },
 ]

@@ -38,7 +38,7 @@ export default function Hero() {
           <div style={anim(0.1)} className="inline-flex items-center gap-2 mb-7">
             <span className="w-5 h-px bg-gold-300" />
             <span className="font-dm text-gold-300 text-[10px] font-semibold tracking-[0.22em] uppercase">
-              Criação Premium · Pedigree CBKC
+              Criação Premium · Pedigree LOP
             </span>
           </div>
 
