@@ -2,9 +2,8 @@ const ITEMS = [
   'Pedigree LOP',
   'Saúde Garantida',
   'Desde 2010',
-  'Suporte Vitalício',
   'Linhagem Campeã',
-  'Entrega em Todo o Brasil',
+  'Entrega em Toda a Europa',
   'Filhotes Socializados',
 ]
 

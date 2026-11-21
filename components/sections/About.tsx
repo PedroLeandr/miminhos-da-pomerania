@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { photoSlots, type PhotoSources } from '@/lib/photo-slots'
 import { Award, Heart, Users, HeartHandshake } from 'lucide-react'
 
 const STATS = [
@@ -11,9 +12,8 @@ const STATS = [
 
 const PILLARS = [
   { icon: Award,         title: 'Pedigree Certificado', desc: 'Registo LOP/FCI com genealogia comprovada até quatro gerações.' },
-  { icon: Heart,         title: 'Saúde Garantida',      desc: 'Protocolo vacinal completo, desparasitação e exames preventivos.' },
+  { icon: Heart,         title: 'Saúde Garantida',      desc: 'Entregamos Vacinados e Disparasitados até a data de entrega' },
   { icon: Users,         title: 'Socialização Perfeita',desc: 'Filhotes criados em ambiente familiar desde os primeiros dias.' },
-  { icon: HeartHandshake,title: 'Suporte Vitalício',    desc: 'Estamos ao seu lado em cada etapa da vida do seu companheiro.' },
 ]
 
 function useReveal(delay = 0) {
@@ -32,7 +32,10 @@ function useReveal(delay = 0) {
   return ref
 }
 
-export default function About() {
+export default function About({ photos }: { photos: PhotoSources }) {
+  const first = photos['sobre-1'] ?? photoSlots['sobre-1'].original
+  const second = photos['sobre-2'] ?? photoSlots['sobre-2'].original
+  const third = photos['sobre-3'] ?? photoSlots['sobre-3'].original
   const leftRef  = useReveal()
   const rightRef = useReveal(120)
   const pillarsRef = useRef<HTMLDivElement>(null)
@@ -74,7 +77,7 @@ export default function About() {
               <br />dedicada à raça
             </h2>
             <p className="font-dm text-stone-400 text-[15px] sm:text-[16px] leading-relaxed mb-4">
-              Somos um canil familiar especializado exclusivamente em Spitz Alemão há mais de 14 anos.
+              Os nossos exemplares são criados em casa familiar.
               A nossa paixão pela raça levou-nos a criar um padrão de excelência que vai muito além do esperado.
             </p>
             <p className="font-dm text-stone-400 text-[15px] leading-relaxed">
@@ -97,12 +100,13 @@ export default function About() {
             {/* Mobile: 2 equal images side by side */}
             <div className="grid grid-cols-2 gap-3 lg:hidden">
               {[
-                { src: '/1.jpg', pos: 'object-[50%_40%]' },
-                { src: '/7.jpg', pos: 'object-[45%_50%]' },
+                { src: first, custom: !!photos['sobre-1'], pos: 'object-[50%_40%]' },
+                { src: second, custom: !!photos['sobre-2'], pos: 'object-[45%_50%]' },
               ].map((img, i) => (
                 <div key={i} className="aspect-[3/4] rounded-2xl overflow-hidden bg-parch-200 img-zoom shadow-sm">
                   <Image
                     src={img.src}
+                    unoptimized={img.custom}
                     alt="Lulu da Pomerânia"
                     width={300}
                     height={400}
@@ -116,8 +120,9 @@ export default function About() {
             <div className="hidden lg:grid grid-cols-2 gap-3">
               <div className="row-span-2 rounded-2xl overflow-hidden bg-parch-200 img-zoom shadow-sm">
                 <Image
-                  src="/1.jpg"
-                  alt="Lulu da Pomerânia dourado"
+                  src={first}
+                  unoptimized={!!photos['sobre-1']}
+                  alt={photos['sobre-1'] ? 'Lulu da Pomerânia' : 'Lulu da Pomerânia dourado'}
                   width={600}
                   height={900}
                   className="object-cover object-[50%_40%] w-full h-full"
@@ -125,8 +130,9 @@ export default function About() {
               </div>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-parch-200 img-zoom shadow-sm">
                 <Image
-                  src="/7.jpg"
-                  alt="Lulu da Pomerânia wolf sable"
+                  src={second}
+                  unoptimized={!!photos['sobre-2']}
+                  alt={photos['sobre-2'] ? 'Lulu da Pomerânia' : 'Lulu da Pomerânia wolf sable'}
                   width={600}
                   height={450}
                   className="object-cover object-[45%_45%] w-full h-full"
@@ -134,8 +140,9 @@ export default function About() {
               </div>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-parch-200 img-zoom shadow-sm">
                 <Image
-                  src="/4.jpg"
-                  alt="Lulu da Pomerânia preto"
+                  src={third}
+                  unoptimized={!!photos['sobre-3']}
+                  alt={photos['sobre-3'] ? 'Lulu da Pomerânia' : 'Lulu da Pomerânia preto'}
                   width={600}
                   height={450}
                   className="object-cover object-[50%_50%] w-full h-full"
@@ -146,7 +153,7 @@ export default function About() {
         </div>
 
         {/* Pillars */}
-        <div ref={pillarsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div ref={pillarsRef} className="grid grid-cols-1 sm:grid-cols-2   lg:grid-cols-3 gap-4">
           {PILLARS.map((p, i) => (
             <div
               key={p.title}

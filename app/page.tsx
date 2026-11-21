@@ -7,19 +7,26 @@ import Gallery from '@/components/sections/Gallery'
 import Benefits from '@/components/sections/Benefits'
 import Testimonials from '@/components/sections/Testimonials'
 import CTA from '@/components/sections/CTA'
+import { readPhotos } from '@/lib/photo-storage'
 
-export default function Home() {
+export const dynamic = 'force-dynamic'
+
+export default async function Home() {
+  const { sources: photos, captions } = await readPhotos().catch(error => {
+    console.error('Erro ao consultar as fotos do site', error)
+    return { sources: {}, captions: {} } as Awaited<ReturnType<typeof readPhotos>>
+  })
   return (
     <main>
-      <Navbar />
+      <Navbar logo={photos.logo} />
       <Hero />
       <Marquee />
-      <About />
-      <Gallery />
+      <About photos={photos} />
+      <Gallery photos={photos} captions={captions} />
       <Benefits />
       <Testimonials />
-      <CTA />
-      <Footer />
+      <CTA logo={photos.logo} />
+      <Footer logo={photos.logo} />
     </main>
   )
 }

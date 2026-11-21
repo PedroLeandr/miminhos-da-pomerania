@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { MessageCircle, Phone, ArrowRight, Star } from 'lucide-react'
 
-export default function CTA() {
+export default function CTA({ logo = '/logo.png' }: { logo?: string }) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -32,7 +32,8 @@ export default function CTA() {
             <div className="relative">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-gold-300/30 shadow-xl bg-parch-200">
                 <Image
-                  src="/logo.png"
+                  src={logo}
+                  unoptimized={logo !== '/logo.png'}
                   alt="Miminhos da Pomerânia"
                   width={80}
                   height={80}

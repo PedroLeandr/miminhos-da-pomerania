@@ -36,8 +36,7 @@ export default function Footer() {
             </div>
 
             <p className="font-dm text-warm-300/80 text-sm leading-relaxed max-w-[320px] mb-7">
-              Criação especializada em Spitz Alemão com pedigree LOP, saúde garantida e suporte
-              vitalício. Há mais de 14 anos a transformar famílias com amor peludo.
+              Criação especializada em Spitz Alemão com pedigree LOP e saúde garantida. Há mais de 14 anos a transformar famílias com amor peludo.
             </p>
 
             <div className="flex items-center gap-2.5">

@@ -11,10 +11,9 @@ const NAV = [
 const SOCIAL = [
   { icon: Instagram, href: 'https://www.instagram.com/miminhos_da_pomerania/', label: 'Instagram' },
   { icon: Facebook, href: 'https://www.facebook.com/miminhosdapomerania', label: 'Facebook' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
 ]
 
-export default function Footer() {
+export default function Footer({ logo = '/logo.png' }: { logo?: string }) {
   const year = new Date().getFullYear()
 
   return (
@@ -26,7 +25,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-3 mb-6 w-fit">
               <div className="w-9 h-9 rounded-full overflow-hidden bg-white/5">
-                <Image src="/logo.png" alt="Logo" width={36} height={36} className="object-contain p-0.5 opacity-80" />
+                <Image src={logo} unoptimized={logo !== '/logo.png'} alt="Logo" width={36} height={36} className="object-contain p-0.5 opacity-80" />
               </div>
               <div className="leading-[1.2]">
                 <p className="font-cormorant text-[15px] font-semibold text-parch-100">Miminhos da</p>
@@ -97,7 +96,7 @@ export default function Footer() {
               <li>
                 <div className="flex items-start gap-3 font-dm text-sm text-stone-400">
                   <MapPin size={13} className="shrink-0 mt-0.5" />
-                  <span>Rua Timor Loro SAE 75<br />3880-644 Válega, Ovar</span>
+                  <span>Ovar, Aveiro</span>
                 </div>
               </li>
             </ul>

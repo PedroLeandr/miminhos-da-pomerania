@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { MessageCircle, Menu, X } from 'lucide-react'
+import Link from 'next/link'
+import { Camera, MessageCircle, Menu, X } from 'lucide-react'
 
 const NAV = [
   { label: 'Sobre', href: '#sobre' },
@@ -11,7 +12,7 @@ const NAV = [
   { label: 'Depoimentos', href: '#depoimentos' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ logo = '/logo.png' }: { logo?: string }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -30,7 +31,7 @@ export default function Navbar() {
 
         <a href="#" className="flex items-center gap-3 group">
           <div className="w-9 h-9 rounded-full overflow-hidden bg-parch-200 ring-1 ring-parch-300/60">
-            <Image src="/logo.png" alt="Logo" width={36} height={36} className="object-contain p-0.5" />
+            <Image src={logo} unoptimized={logo !== '/logo.png'} alt="Logo" width={36} height={36} className="object-contain p-0.5" />
           </div>
           <div className="leading-[1.2]">
             <p className="font-cormorant text-[15px] font-semibold tracking-wide text-ink">Miminhos da</p>
@@ -38,7 +39,7 @@ export default function Navbar() {
           </div>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-8">
           {NAV.map(l => (
             <a
               key={l.href}
@@ -51,23 +52,34 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a
-          href="https://wa.me/351936196822"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 bg-ink text-parch-100 font-dm text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gold-300 hover:text-ink transition-all duration-300 shadow-md"
-        >
-          <MessageCircle size={14} />
-          Falar connosco
-        </a>
+        <div className="flex shrink-0 items-center gap-1 md:gap-2">
+          <Link
+            href="/admin/fotos"
+            aria-label="Gerir fotos"
+            title="Gerir fotos"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-parch-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-300"
+          >
+            <Camera size={18} aria-hidden="true" />
+          </Link>
 
-        <button
-          className="md:hidden p-2 -mr-2 text-ink"
-          onClick={() => setOpen(v => !v)}
-          aria-label="Menu"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+          <a
+            href="https://wa.me/351936196822"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-2 bg-ink text-parch-100 font-dm text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gold-300 hover:text-ink transition-all duration-300 shadow-md"
+          >
+            <MessageCircle size={14} />
+            Falar connosco
+          </a>
+
+          <button
+            className="md:hidden p-2 -mr-2 text-ink"
+            onClick={() => setOpen(v => !v)}
+            aria-label="Menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {open && (

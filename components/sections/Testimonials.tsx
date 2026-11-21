@@ -1,54 +1,35 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Star, Quote } from 'lucide-react'
 
 const TESTIMONIALS = [
   {
-    name: 'Ana Carolina Mendes',
-    role: 'Tutora da Lola — Creme',
-    avatar: 'https://i.pravatar.cc/80?img=11',
-    text: 'A minha Lola chegou com toda a documentação e vacinas em dia. O atendimento foi impecável, antes e depois da adoção. Recomendo sem hesitar!',
+    name: 'Marisa Sousa',
+    role: 'Lady',
+    avatar: '/testemunhos/marisa-sousa.webp',
+    text: 'Um enorme obrigado aos Miminhos da Pomerânia, pelo carinho, dedicação e amor com que cria os seus lindos Lulu da Pomerãnia. Obrigada por todo o cuidado e por nos proporcionar a alegria de recebermos um patudo tão especial nas nossas vidas!',
     rating: 5,
   },
   {
-    name: 'Rodrigo & Fernanda Costa',
-    role: 'Tutores do Thor — Laranja',
-    avatar: 'https://i.pravatar.cc/80?img=14',
-    text: 'Nunca imaginei que um canil pudesse ser tão transparente e atencioso. O Thor chegou perfeito, alegre e saudável. Passado um ano, ainda recebemos carinho e dicas. É família!',
+    name: 'Patriicia Vieira',
+    role: 'Lucky',
+    avatar: '/testemunhos/patriicia-vieira.webp',
+    text: 'O Lucky é tão bonito que dá vontade de lhe tirar fotografias a toda a hora! Estamos completamente rendidos a este patudo. Muito obrigada aos Miminhos da Pomerânia por nos terem trazido este encanto para casa!',
     rating: 5,
   },
   {
-    name: 'Mariana Oliveira',
-    role: 'Tutora da Mel — Branca',
-    avatar: 'https://i.pravatar.cc/80?img=16',
-    text: 'O nível de cuidado com os filhotes é impressionante. A Mel chegou super socializada, sem nenhum medo. O pedigree veio perfeito e o processo foi muito transparente.',
+    name: 'Salete Vieira',
+    role: 'Cookie',
+    avatar: '/testemunhos/salete-vieira.webp',
+    text: 'A Cookie é uma fofura! Aquele focinho conquista qualquer pessoa, e cá em casa já ninguém lhe resiste. Obrigada aos Miminhos da Pomerânia por esta alegria de quatro patas!',
     rating: 5,
-  },
-  {
-    name: 'Lucas Ferreira',
-    role: 'Tutor do Bento — Chocolate',
-    avatar: 'https://i.pravatar.cc/80?img=19',
-    text: 'Pesquisei muito antes de escolher, e a qualidade dos cães e o atendimento daqui são incomparáveis. O meu Bento já ganhou três competições! A linhagem é realmente de elite.',
-    rating: 5,
-  },
-  {
-    name: 'Juliana Ramos',
-    role: 'Tutora da Bella — Merle',
-    avatar: 'https://i.pravatar.cc/80?img=22',
-    text: 'Atendimento humanizado, suporte contínuo e um filhote lindíssimo. A Bella é a alegria da nossa família. Processo claro, sem surpresas. Gratidão eterna!',
-    rating: 5,
-  },
-  {
-    name: 'Carlos & Patrícia Lima',
-    role: 'Tutores do Duque — Sable',
-    avatar: 'https://i.pravatar.cc/80?img=25',
-    text: 'Ficamos encantados desde o primeiro contacto. Recebemos fotos e vídeos regularmente. O Duque chegou muito amado e adaptou-se perfeitamente em casa. Nota 10!',
-    rating: 5,
-  },
+  }
 ]
 
 function Card({ t }: { t: typeof TESTIMONIALS[0] }) {
+  const [failedAvatar, setFailedAvatar] = useState<string>()
+
   return (
     <div className="bg-white/[0.07] border border-white/10 rounded-2xl p-5 sm:p-6 relative backdrop-blur-sm h-full flex flex-col">
       <Quote size={24} className="absolute top-5 right-5 text-gold-300/20 fill-gold-300/20" />
@@ -61,10 +42,19 @@ function Card({ t }: { t: typeof TESTIMONIALS[0] }) {
         &ldquo;{t.text}&rdquo;
       </p>
       <div className="flex items-center gap-3 pt-4 border-t border-white/[0.08]">
-        <div className="w-9 h-9 rounded-full bg-gold-300/20 border border-gold-300/30 shrink-0 flex items-center justify-center">
+        <div aria-hidden="true" className="relative w-9 h-9 overflow-hidden rounded-full bg-gold-300/20 border border-gold-300/30 shrink-0 flex items-center justify-center">
           <span className="font-cormorant text-gold-300 font-semibold text-base leading-none">
             {t.name.charAt(0)}
           </span>
+          {failedAvatar !== t.avatar && <img
+            src={t.avatar}
+            alt=""
+            width={36}
+            height={36}
+            loading="lazy"
+            onError={() => setFailedAvatar(t.avatar)}
+            className="absolute inset-0 h-full w-full object-cover"
+          />}
         </div>
         <p className="font-dm font-semibold text-parch-100 text-sm leading-none">{t.name}</p>
       </div>

@@ -7,9 +7,9 @@ const BENEFITS = [
   { n: '01', icon: Trophy,       title: 'Linhagem Campeã',     desc: 'Descendentes de campeões nacionais e internacionais, garantindo o melhor padrão da raça.' },
   { n: '02', icon: Stethoscope,  title: 'Saúde Monitorada',    desc: 'Acompanhamento veterinário desde o nascimento com exames completos e vacinas em dia.' },
   { n: '03', icon: Baby,         title: 'Filhotes Socializados',desc: 'Criados em ambiente familiar, convivendo com crianças, adultos e outros animais.' },
-  { n: '04', icon: GraduationCap,title: 'Orientação Completa', desc: 'Manual de cuidados e acesso ao grupo exclusivo de tutores Miminhos da Pomerânia.' },
+  { n: '04', icon: GraduationCap,title: 'Orientação Completa', desc: 'Sempre disponiveis mesmo após os miminhos estarem na sua nova família' },
   { n: '05', icon: Sparkles,     title: 'Padrão Premium',      desc: 'Seleção rigorosa dos reprodutores para o mais alto padrão estético e temperamental.' },
-  { n: '06', icon: Clock,        title: 'Garantia Contratual', desc: 'Contrato formal com garantia de saúde e termo de responsabilidade do canil.' },
+  { n: '06', icon: Clock,        title: 'Garantia Contratual', desc: 'Contrato formal com garantia de saúde e termo de responsabilidade.' },
   { n: '07', icon: MapPin,       title: 'Entrega com Segurança',desc: 'Entregamos com toda a documentação e cuidados para a viagem.' },
   { n: '08', icon: PhoneCall,    title: 'Suporte Pós-adoção',  desc: 'Tire todas as suas dúvidas connosco. Estamos disponíveis sempre que precisar.' },
 ]
